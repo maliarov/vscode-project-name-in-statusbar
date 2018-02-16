@@ -2,8 +2,12 @@
     "name": "vscode-project-name-in-statusbar",
     "displayName": "Project Name in StatusBar",
     "description": "Simply adds project name in StatusBar",
-    "version": "0.0.1",
+    "version": "1.0.0",
     "publisher": "mujichOk",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mujichOk/vscode-project-name-in-statusbar.git"
+    },
     "engines": {
         "vscode": "^1.20.0"
     },
@@ -19,14 +23,43 @@
             "type": "object",
             "title": "Project Name In StatusBar extension configuration",
             "properties": {
-                "projectNameInStatusBar.mode": {
-                    "type": ["string"],
+                "projectNameInStatusBar.source": {
+                    "type": "string",
                     "enum": [
                         "none",
-                        "folder"
+                        "folderName"
                     ],
-                    "default": "folder",
+                    "default": "folderName",
                     "description": "Defines way of getting project name"
+                },
+                "projectNameInStatusBar.align": {
+                    "type": "string",
+                    "enum": [
+                        "left",
+                        "right"
+                    ],
+                    "default": "right",
+                    "description": "Defines The alignment of the label, requires restart of vscode"
+                },
+                "projectNameInStatusBar.alignPriority": {
+                    "type": "number",
+                    "default": 0,
+                    "description": "Defines priority of the label. Higher values mean the label should be shown more to the left, requires restart of vscode"
+                },
+                "projectNameInStatusBar.textStyle": {
+                    "type": "string",
+                    "enum": [
+                        "none",
+                        "uppercase",
+                        "lowercase"
+                    ],
+                    "default": "none",
+                    "description": "Defines project name text style inside template"
+                },
+                "projectNameInStatusBar.template": {
+                    "type": "string",
+                    "default": "$(file-submodule) ${project-name}",
+                    "description": "Defines template of project name placeholder, you can use octicons to decorate your view"
                 }
             }
         }
