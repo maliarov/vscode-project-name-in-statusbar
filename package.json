@@ -4,6 +4,10 @@
     "description": "Simply adds project name in StatusBar",
     "version": "1.0.0",
     "publisher": "mujichOk",
+    "licenses": [{
+        "type": "MIT",
+        "url": "https://www.opensource.org/licenses/mit-license.php"
+    }],
     "repository": {
         "type": "git",
         "url": "https://github.com/mujichOk/vscode-project-name-in-statusbar.git"
